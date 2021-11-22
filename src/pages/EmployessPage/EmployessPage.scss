@@ -1,0 +1,108 @@
+.employess-page {
+  display: grid;
+
+  @media (min-width: 576px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .employess {
+    @media (min-width: 768px) {
+      border-right: 2px solid grey;
+    }
+
+    .title {
+      text-align: center;
+      @media (min-width: 768px) {
+        border-bottom: 2px solid grey;
+      }
+    }
+
+    .lists {
+      display: grid;
+      grid-gap: 1rem;
+      padding: 1rem;
+
+      @media (min-width: 480px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (min-width: 900px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (min-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media (min-width: 1400px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+
+      .list {
+        ul {
+          list-style: none;
+          margin: 0px;
+          padding: 0px;
+
+          li {
+            .user.active {
+              color: #0000FFFF;
+              font-weight: 700;
+            }
+
+            .status {
+              .radio {
+                display: flex;
+                align-items: center;
+
+                input[type="radio"] {
+                  display: block;
+                  margin-right: 5px;
+                }
+
+                label {
+                  font-size: 18px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .employess-bithday {
+    .title {
+      text-align: center;
+      @media (min-width: 768px) {
+        border-bottom: 2px solid grey;
+      }
+    }
+
+    .lists {
+      padding: 1rem;
+
+      .list {
+        ul {
+          list-style: none;
+          margin: 0px;
+          padding: 0px;
+
+          li {
+
+            .status {
+              input {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
