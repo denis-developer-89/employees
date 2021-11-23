@@ -28,7 +28,7 @@ const usersReducer = createReducer(initialState, (builder) => {
           if (user.id === action.payload.user.id) {
             if (action.payload.status === "active") {
               user.status = action.payload.status;
-              state.usersBithday.push(action.payload.user);
+              state.usersBithday.push(user);
             } else {
               user.status = action.payload.status;
               state.usersBithday = state.usersBithday.filter((userBithday) => {
