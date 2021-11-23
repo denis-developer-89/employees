@@ -145,7 +145,6 @@ const EmployessPage = () => {
         <div className="title">
           <h2>Employess Bithday</h2>
         </div>
-
         <div className="lists">
           {Object.keys(usersBithdaySortableLists).length === 0 ? (
             <h3>Employees List is empty</h3>
