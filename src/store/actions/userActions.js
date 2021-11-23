@@ -1,24 +1,27 @@
-import { createAsyncThunk, createAction } from "@reduxjs/toolkit";
-import UserService from "../../services/userService";
-import { CHANGE_USER_STATUS, GET_USERS } from "../constant/usersConstant";
-import getAlphabet from "../../utils/helpers/getAlphabet";
+import { createAsyncThunk, createAction } from '@reduxjs/toolkit';
+import UserService from '../../services/userService';
+import { CHANGE_USER_STATUS, GET_USERS } from '../constant/usersConstant';
+import getAlphabet from '../../utils/helpers/getAlphabet';
 
 export const getUsers = createAsyncThunk(GET_USERS, async () => {
-  const response = await UserService.getUsers();
-  const usersList = response.data;
-  const usersSortable = {};
-  const alphabet = getAlphabet();
-
-  alphabet.forEach((character, index, arrayAlphabet) => {
-    usersSortable[character] = [];
-    usersList.forEach((userItem) => {
-      const firstLetter = userItem.firstName[0].toUpperCase();
-      if (character === firstLetter) {
-        usersSortable[character].push({ ...userItem, status: "not-active" });
-      }
+  try {
+    const response = await UserService.getUsers();
+    const usersList = response.data;
+    const usersSortable = {};
+    const alphabet = getAlphabet();
+    alphabet.forEach((character, index, arrayAlphabet) => {
+      usersSortable[character] = [];
+      usersList.forEach(userItem => {
+        const firstLetter = userItem.firstName[0].toUpperCase();
+        if (character === firstLetter) {
+          usersSortable[character].push({ ...userItem, status: 'not-active' });
+        }
+      });
     });
-  });
-  return usersSortable;
+    return usersSortable;
+  } catch (error) {
+    console.log(error.response);
+  }
 });
 
 export const changeUserStatus = createAction(
@@ -30,5 +33,5 @@ export const changeUserStatus = createAction(
         status: status,
       },
     };
-  }
+  },
 );
