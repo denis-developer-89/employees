@@ -42,7 +42,6 @@
         grid-template-columns: repeat(4, 1fr);
       }
 
-
       .list {
         ul {
           list-style: none;
@@ -51,7 +50,7 @@
 
           li {
             .user.active {
-              color: #0000FFFF;
+              color: #0000ffff;
               font-weight: 700;
             }
 
@@ -94,7 +93,6 @@
           padding: 0px;
 
           li {
-
             .status {
               input {
                 display: block;

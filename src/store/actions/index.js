@@ -1,3 +1,3 @@
-import {getUser} from './userActions'
+import { getUser } from "./userActions";
 
-export default {getUser}
+export default { getUser };
