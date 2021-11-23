@@ -3,12 +3,12 @@ import {Navigate} from "react-router-dom";
 
 const routes = [
     {
-        path: '/employess/',
+        path: '/employees',
         element: <EmployessPage/>,
     },
     {
         path: '*',
-        element: <Navigate to="/employess/"/>,
+        element: <Navigate to="/employees"/>,
     }
 ];
 

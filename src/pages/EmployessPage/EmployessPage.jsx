@@ -25,14 +25,20 @@ const EmployessPage = () => {
         const usersBithdaySort = [...usersBithday];
         const monthsArray = getAllMonths();
 
-        // const usersSortableBylastName = usersBithdaySortable.sort((a, b) =>{
-        //    return a.lastName.localeCompare(b.lastName);
-        // })
 
+        const usersSortableBylastName = usersBithdaySort.sort((a, b) =>{
+           return a.lastName.localeCompare(b.lastName);
+        })
+
+        const usersSortableByDate = usersSortableBylastName.sort((a, b) =>{
+           var dateA = new Date(a.dob).getTime();
+           var dateB = new Date(b.dob).getTime();
+           return dateA > dateB ? 1 : -1;  
+        })
 
         const usersSortablByMonths = {};
         monthsArray.forEach((month, index, arrayAlphabet) => {
-            usersBithdaySort.forEach((userBithdayItem) => {
+            usersSortableByDate.forEach((userBithdayItem) => {
                 const date = new Date(userBithdayItem.dob);
                 const monthOfUser = date.getMonth();
 
