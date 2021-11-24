@@ -9,12 +9,12 @@ export const getUsers = createAsyncThunk(GET_USERS, async () => {
     const usersList = response.data;
     const usersSortable = {};
     const alphabet = getAlphabet();
-    alphabet.forEach((character, index, arrayAlphabet) => {
+    alphabet.forEach((character) => {
       usersSortable[character] = [];
       usersList.forEach(userItem => {
         const firstLetter = userItem.firstName[0].toUpperCase();
         if (character === firstLetter) {
-          usersSortable[character].push({ ...userItem, status: 'not-active' });
+          usersSortable[character].push({ ...userItem,status: 'not-active' });
         }
       });
     });
