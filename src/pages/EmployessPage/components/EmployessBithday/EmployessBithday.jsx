@@ -48,7 +48,6 @@ const EmployessBithday = () => {
 
 
   return (
-    <div className="employess-page">
       <div className="employess-bithday">
         <div className="title">
           <h2>Employess Bithday</h2>
@@ -76,7 +75,6 @@ const EmployessBithday = () => {
           )}
         </div>
       </div>
-    </div>
   );
 };
 
